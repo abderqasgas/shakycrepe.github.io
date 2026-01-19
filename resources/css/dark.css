@@ -1,0 +1,462 @@
+html{
+    font-size: 16px;
+    width: 100%;
+}
+
+body{
+    background-color: #4A2C2A;
+    color: #FFEBB4;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 600px){
+ html{
+    font-size: 12px;
+ }   
+}
+
+a{
+    text-decoration: none;
+    color: #FFEBB4;
+}
+
+/* header section  */
+
+header{
+    background-color: #4A2C2A;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    border-bottom: 2px solid #FFEBB4;
+    z-index: 100;
+}
+
+header .desktop-header-content{
+    display: flex;
+    justify-content: space-between; /* Pushes logo to left, button to right */
+    align-items: center;
+    width: 100%;        /* Forces it to take full screen width */
+    padding: 0 20px;    /* Adds a little breathing room on the edges */
+    margin: 0;
+}
+
+header .desktop-header-content .shaky-logo-desktop{
+    height: 5rem;
+}
+
+header .desktop-header-content nav{
+    display: flex;
+    justify-content: flex-start;
+}
+
+header .desktop-header-content ul{
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+header .desktop-header-content ul li{
+    display: inline-block;
+    margin-left: 3rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+header .desktop-header-content ul li:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+header .desktop-header-content .order-btn{
+    flex-shrink: 1;
+    margin-left: 2rem;
+    text-wrap: nowrap;
+}
+
+.order-btn{
+    background-color: #C82E2E;
+    padding: 0.3rem 1.2rem;
+    border-radius: 3rem;
+    box-shadow: 1px 1px gray;
+    margin-right: 2rem;
+}
+
+.order-btn:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.order-btn:active{
+    box-shadow: none;
+}
+
+.order-btn a{
+    color: white;
+    font-size: 1.2rem;
+}
+
+header .mobile-header-content{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    
+    header .desktop-header-content{
+        display: none;
+    }
+    
+    header .mobile-header-content{
+         display: flex;
+        justify-content: space-between; /* Pushes logo to left, button to right */
+        align-items: center;
+        width: 100%;        /* Forces it to take full screen width */
+        padding: 0 20px;    /* Adds a little breathing room on the edges */
+        margin: 0;
+    }
+
+    header .mobile-header-content .shaky-logo-mobile{
+        height: 7rem;
+    }
+}
+
+/* hero section  */
+
+main{
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: 4rem;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30rem;
+    width: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../images/shaky-ban.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-content{
+    color: #4A2C2A;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.hero-btn{
+    background-color: #4A2C2A;
+    color: #FFEBB4;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 3rem;
+}
+
+.hero-btn:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.hero-btn:active{
+    opacity: 0.8;
+}
+
+@media only screen and (max-width: 600px){
+
+    .hero-content{
+        font-size: 1.2rem;
+        padding: 0 1rem;
+    }
+
+    .hero{
+        height: 23rem;
+        background-position-y: 1rem;
+        background-position-x: center;
+        background-size: 200%;
+    }
+}
+
+/* favoirites section  */
+
+.favorites{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #4A2C2A;
+    width: 90%;
+}
+
+.favorites h1{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.fav-items{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.fav-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12rem;
+    height: 30rem;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.fav-item h1{
+    line-height: 1.3rem;
+    display: block;
+    height: 2.8rem;
+}
+
+.fav-item p{
+    text-align: left;
+    line-height: .9rem;
+    font-size: 0.9rem;
+}
+
+.fav-img-card{
+    height: 15rem;
+    width: 100%;
+    border-radius: 3rem;
+}
+
+.fav-img-card img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+.fav-item-price{
+    border: 1px solid #FFEBB4;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2rem;
+    justify-self: flex-end;
+    margin-top: auto;
+}
+
+@media only screen and (max-width: 600px){
+    
+    .fav-item p{
+        display: none;
+    }
+
+    .fav-item-price{
+        display: none;
+    }
+
+    .fav-items{
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+
+    .fav-item{
+        height: 17rem;
+    }
+
+    .fav-img-card{
+        height: 9.5rem;
+        width: 9.5rem;
+        border-radius: 50%;
+    }
+
+    .fav-img-card img{
+        border-radius: 50%;
+    }
+}
+
+/* footer section  */
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    height: 15rem;
+    border-top: 2px solid #FFEBB4;
+    background-color: #4A2C2A;
+}
+
+
+.desktop-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    
+}
+
+.desktop-footer p{
+    display: inline-block;
+}
+
+.desktop-footer .location{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.desktop-footer h3{
+    margin: 0.3rem;
+}
+
+.desktop-footer p{
+    margin: 0;
+}
+
+.desktop-footer .location-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.desktop-footer .phone-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.mobile-footer{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    .desktop-footer{
+        display: none;
+    }
+
+    .mobile-footer{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1.5rem;
+    }
+
+    .mobile-footer-content{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    .mobile-footer-buttons{
+        width: 100%;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        margin-top: auto;
+        margin-bottom: 1rem;
+    }
+
+    .mobile-footer p{
+    display: inline-block;
+    }
+
+    .mobile-footer .location{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    }
+
+    .mobile-footer h3{
+    margin: 0.3rem;
+    }
+
+    .mobile-footer p{
+    margin: 0;
+    }
+
+    .mobile-footer .location-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    }
+
+    .order-btn{
+    background-color: #C82E2E;
+    padding: 0.3rem 2.2rem;
+    border-radius: 3rem;
+    box-shadow: 1px 1px gray;
+    margin-right: 2rem;
+    height: 3rem;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .order-btn:hover{
+    opacity: 0.9;
+    cursor: pointer;
+    }
+
+    .order-btn:active{
+    box-shadow: none;
+    }
+
+    .order-btn a{
+    color: white;
+    font-size: 1.2rem;
+    }
+
+    .call-btn{
+    background-color: #4A2C2A;
+    border: 2px solid #FFEBB4;
+    padding: 0.3rem 2.2rem;
+    border-radius: 3rem;
+    box-shadow: 1px 1px gray;
+    margin-right: 2rem;
+    height: 3rem;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .call-btn:hover{
+    opacity: 0.9;
+    cursor: pointer;
+    }
+
+    .call-btn:active{
+    box-shadow: none;
+    }
+
+    .call-btn a{
+    color: #FFEBB4;
+    font-size: 1.2rem;
+    }
+}
