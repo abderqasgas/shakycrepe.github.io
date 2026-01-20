@@ -125,18 +125,16 @@ nav{
 
 .desktop-header-content button:hover {
     transform: rotate(20deg) scale(1.1);
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-}
-
-.desktop-header-content button:active {
-    transform: rotate(20deg) scale(0.95);
 }
 
  .desktop-header-content button svg{
     height: 2rem;
     width: 2rem;
     margin-right: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    /* border: 2px solid var(--secondary-color); */
+    border-radius: 50%;
 }
 
 header .desktop-header-content{
@@ -263,38 +261,39 @@ header .mobile-header-content{
     flex-shrink: 1;
     color: var(--secondary-color);
     font-size: 2rem;
-    transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    /* transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; */
     cursor: pointer;
     border-radius: 0.5rem;
     position: relative;
     } 
 
-    .mobile-header-content button:hover {
-    transform: rotate(20deg) scale(1.1);
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .mobile-header-content button:active {
-    transform: rotate(20deg) scale(0.95);
-    }none;
-    padding: 0.3rem 1.2rem;
-    flex-shrink: 1;
-    color: var(--secondary-color);
-    font-size: 2rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border-radius: 0.5rem;
-    } 
-
-    .mobile-header-content button:hover {
-    transform: rotate(20deg) scale(1.1);
+   .mobile-header-content button svg{
+    height: 2rem;
+    width: 2rem;
+    margin-right: 0.9rem;
     background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-    }
+    padding: 0.5rem;
+    /* border: 2px solid var(--secondary-color); */
+    border-radius: 50%;
+   }
+}
 
-    .mobile-header-content button:active {
-    transform: rotate(20deg) scale(0.95)on: column;
+/* hero section  */
+
+main{
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: 4rem;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 30rem;
