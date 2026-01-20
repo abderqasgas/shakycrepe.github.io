@@ -3,6 +3,58 @@
   --secondary-color: #FFEBB4;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
 
 html{
     font-size: 16px;
@@ -29,6 +81,7 @@ body{
 a{
     text-decoration: none;
     color: var(--secondary-color);
+    transition: all 0.3s ease;
 }
 
 /* header section  */
@@ -43,6 +96,8 @@ header{
     height: 6rem;
     border-bottom: 2px solid var(--secondary-color);
     z-index: 100;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 nav{
@@ -63,6 +118,19 @@ nav{
     color: var(--secondary-color);
     font-size: 2rem;
     width: 100%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.desktop-header-content button:hover {
+    transform: rotate(20deg) scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.desktop-header-content button:active {
+    transform: rotate(20deg) scale(0.95);
 }
 
  .desktop-header-content button svg{
@@ -104,11 +172,30 @@ header .desktop-header-content ul li{
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 header .desktop-header-content ul li:hover{
-    opacity: 0.5;
+    opacity: 0.7;
     cursor: pointer;
+    transform: translateY(-3px);
+}
+
+header .desktop-header-content ul li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+header .desktop-header-content ul li:hover::after {
+    width: 100%;
 }
 
 header .desktop-header-content .order-btn{
@@ -123,15 +210,19 @@ header .desktop-header-content .order-btn{
     border-radius: 3rem;
     box-shadow: 1px 1px gray;
     margin-right: 2rem;
+    transition: all 0.3s ease;
 }
 
 .order-btn:hover{
     opacity: 0.9;
     cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(200, 46, 46, 0.3);
 }
 
 .order-btn:active{
     box-shadow: none;
+    transform: translateY(0);
 }
 
 .order-btn a{
@@ -167,36 +258,43 @@ header .mobile-header-content{
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    border: none;
+    border: 2px solid transparent;
     padding: 0.3rem 1.2rem;
     flex-shrink: 1;
     color: var(--secondary-color);
     font-size: 2rem;
+    transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    position: relative;
     } 
 
-   .mobile-header-content button svg{
-    height: 2rem;
-    width: 2rem;
-    margin-right: 0.9rem;
-   }
-}
+    .mobile-header-content button:hover {
+    transform: rotate(20deg) scale(1.1);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.05);
+    }
 
-/* hero section  */
+    .mobile-header-content button:active {
+    transform: rotate(20deg) scale(0.95);
+    }none;
+    padding: 0.3rem 1.2rem;
+    flex-shrink: 1;
+    color: var(--secondary-color);
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    } 
 
-main{
-    
-    position: relative;
-    display: flex;
-    align-items: center;
-    top: 4rem;
-    flex-direction: column;
-    width: 100%;
-    max-width: none;
-}
+    .mobile-header-content button:hover {
+    transform: rotate(20deg) scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    }
 
-.hero{
-    display: flex;
-    flex-direction: column;
+    .mobile-header-content button:active {
+    transform: rotate(20deg) scale(0.95)on: column;
     align-items: center;
     justify-content: center;
     height: 30rem;
@@ -212,6 +310,7 @@ main{
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-btn{
@@ -220,15 +319,20 @@ main{
     font-weight: bold;
     padding: 0.6rem 1.2rem;
     border-radius: 3rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .hero-btn:hover{
     opacity: 0.9;
     cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero-btn:active{
     opacity: 0.8;
+    transform: scale(0.98);
 }
 
 @media only screen and (max-width: 600px){
@@ -257,11 +361,13 @@ main{
     padding: 2rem;
     background-color: var(--primary-color);
     width: 90%;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .favorites h1{
     font-weight: bold;
     text-transform: uppercase;
+    animation: slideInLeft 0.6s ease-out;
 }
 
 .fav-items{
@@ -282,6 +388,12 @@ main{
     height: 30rem;
     font-size: 0.7rem;
     text-align: center;
+    transition: all 0.3s ease;
+    animation: scaleIn 0.5s ease-out;
+}
+
+.fav-item:hover {
+    transform: translateY(-10px);
 }
 
 .fav-item h1{
@@ -300,12 +412,24 @@ main{
     height: 15rem;
     width: 100%;
     border-radius: 3rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.fav-item:hover .fav-img-card {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
 }
 
 .fav-img-card img{
     width: 100%;
     height: 100%;
     border-radius: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.fav-item:hover .fav-img-card img {
+    transform: scale(1.1);
 }
 
 .fav-item-price{
@@ -314,6 +438,13 @@ main{
     border-radius: 2rem;
     justify-self: flex-end;
     margin-top: auto;
+    transition: all 0.3s ease;
+}
+
+.fav-item:hover .fav-item-price {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: scale(1.1);
 }
 
 @media only screen and (max-width: 600px){
@@ -358,11 +489,13 @@ main{
     padding: 2rem;
     background-color: var(--primary-color);
     width: 90%;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .deals h1{
     font-weight: bold;
     text-transform: uppercase;
+    animation: slideInRight 0.6s ease-out;
 }
 
 .deals h2{
@@ -389,6 +522,12 @@ main{
     height: 30rem;
     font-size: 0.7rem;
     text-align: center;
+    transition: all 0.3s ease;
+    animation: scaleIn 0.5s ease-out;
+}
+
+.deal-item:hover {
+    transform: translateY(-10px);
 }
 
 .deal-item h1{
@@ -407,12 +546,24 @@ main{
     height: 15rem;
     width: 100%;
     border-radius: 3rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.deal-item:hover .deal-img-card {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
 }
 
 .deal-img-card img{
     width: 100%;
     height: 100%;
     border-radius: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.deal-item:hover .deal-img-card img {
+    transform: scale(1.1);
 }
 
 .deal-item-price{
@@ -427,6 +578,14 @@ main{
     justify-self: flex-end;
     margin-top: auto;
     color: red;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.deal-item:hover .deal-item-price {
+    transform: scale(1.15);
+    background-color: red;
+    color: white;
 }
 
 @media only screen and (max-width: 600px){
@@ -470,6 +629,7 @@ main{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    transition: all 0.6s ease;
 }
 
 .about-content{
@@ -477,6 +637,7 @@ main{
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .about-btn{
@@ -485,15 +646,20 @@ main{
     font-weight: bold;
     padding: 0.6rem 1.2rem;
     border-radius: 3rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .about-btn:hover{
     opacity: 0.9;
     cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .about-btn:active{
     opacity: 0.8;
+    transform: scale(0.98);
 }
 
 @media only screen and (max-width: 600px){
@@ -523,10 +689,12 @@ main{
     padding: 2rem;
     background-color: var(--primary-color);
     width: 90%;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .testimonials h1{
     font-weight: bold;
+    animation: slideInLeft 0.6s ease-out;
 }
 
 .testimonials h2{
@@ -553,6 +721,12 @@ main{
     height: 30rem;
     font-size: 0.7rem;
     text-align: center;
+    transition: all 0.3s ease;
+    animation: scaleIn 0.5s ease-out;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-10px);
 }
 
 .testimonial-item h1{
@@ -571,12 +745,24 @@ main{
     height: 15rem;
     width: 100%;
     border-radius: 3rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.testimonial-item:hover .testimonial-img-card {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
 }
 
 .testimonial-img-card img{
     width: 100%;
     height: 100%;
     border-radius: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-item:hover .testimonial-img-card img {
+    transform: scale(1.1);
 }
 
 .testimonial-item-rating{
@@ -591,6 +777,13 @@ main{
     justify-self: flex-end;
     margin-top: auto;
     color: red;
+    transition: all 0.3s ease;
+}
+
+.testimonial-item:hover .testimonial-item-rating {
+    background-color: red;
+    color: white;
+    transform: scale(1.1);
 }
 
 @media only screen and (max-width: 600px){
@@ -631,6 +824,8 @@ footer{
     height: 15rem;
     border-top: 2px solid var(--secondary-color);
     background-color: var(--primary-color);
+    transition: all 0.4s ease;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 
