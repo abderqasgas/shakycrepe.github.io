@@ -1,9 +1,22 @@
+let darkmode = localStorage.getItem('darkmode')
+const themeSwitch = document.querySelectorAll('.theme-switch')
 
-function toggleTheme() {
-    const themeLink = document.getElementById('theme');
-    if (themeLink.href.includes('dark.css')) {
-        themeLink.href = './resources/css/style.css';
-    } else {
-        themeLink.href = './resources/css/dark.css';
-    }
-}   
+const enableDarkmode = () => {
+  document.body.classList.add('darkmode')
+  localStorage.setItem('darkmode', 'active')
+}
+
+const disableDarkmode = () => {
+  document.body.classList.remove('darkmode')
+  localStorage.setItem('darkmode', null)
+}
+
+if(darkmode === "active") enableDarkmode()
+
+themeSwitch.forEach(btn => {
+    btn.addEventListener("click", () => {
+  darkmode = localStorage.getItem('darkmode')
+  darkmode !== "active" ? enableDarkmode() : disableDarkmode()
+    })
+})
+
