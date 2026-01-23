@@ -20,3 +20,4 @@ themeSwitch.forEach(btn => {
     })
 })
 
+console.log('helooo');
